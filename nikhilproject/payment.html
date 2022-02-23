@@ -145,7 +145,11 @@ img{
     flex-wrap: wrap;
 }
 #flex{
+   /* top: 0%;
+    position: sticky; */
     display:flex
+    
+    
 }
 #wallicon{
     /* border: 1px solid pink; */
@@ -162,7 +166,7 @@ img{
 #navbar{
    top: 0px;
         position:fixed; 
-        
+        margin-bottom: -46px;
         width: 100%;
         height: 50px;
        
@@ -208,7 +212,7 @@ img{
 #foot_main{
     /* border: 2px solid red; */
     background-color: white;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     padding-top: 5%;
     }
     .foot-column{
@@ -360,6 +364,105 @@ img{
 text-decoration: underline;
 color: blueviolet;
 }
+
+
+@media only screen and (max-width: 480px) and (min-width: 0px){
+
+    #roomheld>#flex{
+        position: sticky;
+        top: 2%;
+        z-index: 100;
+    }
+
+    #highlights p{
+         font-size: 3vw;
+        }
+        #highlights p>img{
+            width: 4vw;
+            height: 4;
+           }
+        #gest_per_room{
+            font-size: 3vw;
+        }
+        #gest_per_room lable{
+            font-size: 3vw;
+        }
+        #room,#day{
+            width: 1vw;
+        }
+        #for_filter{
+            display: none;
+        }
+        #hotelname{
+           
+            font-size: 4.5vw;
+            margin: 0px;
+            padding: 0px;
+            margin-left: 15px;
+        }
+        #abouthotel{
+            display: none;
+        }
+        #exclusive{
+            display: none;
+        }
+        #last{
+            /* border: 2px solid rebeccapurple; */
+            display: flex;
+          flex-wrap: wrap;
+          height: auto;
+          justify-content: left;
+          align-content: center;
+          width: 100%;
+          }
+          #st_container{
+            display: flex;
+            flex-flow: column;
+            height: 200px;
+            width: 90%;
+            text-align: center;
+        }
+        #st_container>h2{
+        font-size: 17px;
+        }
+        #st_container>button{
+        width: 140px;
+        height: 100px;
+        display: flex;
+        margin: 0px;
+        padding-right: 0px;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        font-size: 17px;
+        text-align: center;
+        margin-bottom: 3px;
+        }
+        #reset p{
+            display: none;
+        }
+        .info>div>img{
+            width: 7vw;
+            height: 8vw;
+        }
+        .info>div>#logo_m{
+            width: 20vw;
+            height: 7vh;
+        }
+        #roomimg{
+      width: 100%;
+      margin-left: -15px;
+      height: 60%;
+        }
+        #detailsdiv{
+            height: 70%;
+            
+        }
+
+
+}
+
+
     </style>
 </head>
 <body>
@@ -371,11 +474,11 @@ color: blueviolet;
     
 
     <!-- info box like sigin ,help other -->
-    <div class="info">
-        <div class="flex"><img  src="/images/1st.png" alt="" width="30px" height="30px">English</div>
-        <div class="flex"><img  src="/images/2nd.png" alt="" width="30px" height="30px"> Help</div>
-        <div class="flex"><img  src="/images/3rd.png" alt="" width="30px" height="30px"> My Trips</div>
-        <div id="user" class="flex"><img src="/images/8th.png" alt="" width="39px" height="37px" >Login </div>
+    <div id="reset" class="info">
+        <div class="flex"><img  src="/images/1st.png" alt="" width="30px" height="30px"><p>English</p> </div>
+        <div class="flex"><img  src="/images/2nd.png" alt="" width="30px" height="30px"><p>Help</p> </div>
+        <div class="flex"><img  src="/images/3rd.png" alt="" width="30px" height="30px"><p>My Trips</p> </div>
+        <div id="user" class="flex"><img src="/images/8th.png" alt="" width="39px" height="37px" > <p>Login</p></div>
         <div ><img src="/images/2nd logo.png" alt=""  width="90px" height="49px"  ></div>
     </div>
 </div>
@@ -421,7 +524,7 @@ color: blueviolet;
         <div class="vertical"></div>
 
         <div id="roomheld">
-            <div id="flex">
+            <div id="flex" >
                 <img src="wall-clock.png" alt="" id="wallicon">
                 <p>Room Held for:</p>
                 <p id="countdown"></p>
@@ -433,7 +536,7 @@ color: blueviolet;
     
     <!-- revivew reservation details -->
     <div id="review">
-        <h1>Review Reservation Details</h1>
+        <h2>Review Reservation Details</h2>
         <div id="reviewsub">
        <div id="detailsdiv">
         <img src="" alt="" id="roomimg">
@@ -471,7 +574,7 @@ color: blueviolet;
         
        <div><input type="checkbox" id="Make my prefferd card"><label for="Make my prefferd card">Make my prefferd card</label></div> 
         <div id="proceeddiv" ><button id="proceed" onclick="otp()">Proceed to Pay</button> <h4 id="proceedpay"></h4></div>
-        <h1>Hotel Cancellation Policy</h1>
+        <h2>Hotel Cancellation Policy</h2>
         <p id="reserve">About reservation:</p>
         <p id="info">You may cancel your reservation for no charge before 11:59 PM local hotel time on 1 day[s] before arrival. Please note that we will assess a fee if you must cancel after this deadline</p>
         <hr>
