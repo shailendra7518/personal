@@ -134,8 +134,9 @@ p:hover{
     /* margin-bottom: 1%; */
     position: sticky;
     top: 0%;
-    z-index: 100;
+    z-index: 200;
     background-color: white;
+    padding: 3px;
 }
 #for_filter{
     display: flex;
@@ -159,6 +160,9 @@ p:hover{
 #for_guest>input{
  
   width: 20%;
+  outline: none;
+  border: 0.1px solid grey;
+ 
 
 }
 #gest_per_room{
@@ -534,6 +538,10 @@ color: blueviolet;
       
         margin-top: -3px;
         
+        }
+        #main{
+            padding-left: 3px;
+            padding-right: 3px;
         }
         #main>div{
             /* border: 2px solid black; */
