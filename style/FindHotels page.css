@@ -650,8 +650,8 @@ background-color: white;
     display: flex;
     flex-flow: column;
     gap: 20px;
-    padding-left: 0%;
-    padding-right: 0%;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 #for_guest{
     display: none;
