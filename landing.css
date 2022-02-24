@@ -1198,6 +1198,13 @@ select {
     background-color:#53505f;
 }
 
+.btuing{
+   
+    width: 100%;
+   
+    /* margin-top: 90px; */
+}
+
 @media only screen and (max-width: 480px) and (min-width: 0px){
     .category{
         display: none;
