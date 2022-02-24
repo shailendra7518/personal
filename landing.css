@@ -1511,6 +1511,9 @@ width: 100%;
     font-size: 15px;
     width: 110px;
 }
+#footer_box{
+    width: 110vw;
+}
 #footer_box>.footer_cat{
 width: 100%;
 display: flex;
@@ -1565,6 +1568,12 @@ border: 0px solid transparent;
 #siginName>img{
 width: 12vw;
 height: 9vw;
+}
+#footer_end {
+    margin-top: 20px;
+    border: 2px solid transparent;
+    background-color: white;
+    width: 110vw;
 }
 }
 
