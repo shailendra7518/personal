@@ -1,6 +1,25 @@
-function appendata(data,main){
 
-    data.map(({brand_name,filter_name,contact,hotel_name,hotele_address,main_image,place_name,price,room})=>{
+function appendata(data, main) {
+    
+    // brand_name: "STREGIS"
+    // filter_name: "Restaurant on site"
+    // hotel_address: "462, Senapati Bapat Marg, Lower Parel Mumbai, India 400013"
+    // hotel_name: "The St. Regis Mumbai"
+    // main_image: "https://cache.marriott.com/marriottassets/marriott/BOMXR/bomxr-exterior-1522-hor-feat.jpg?resize=373:150&output-quality=70"
+    // place_name: "mumbai"
+    // price: 7840
+    // room: [,…]
+    // __v: 0
+    // _id: "621497f02905d7555ec8dd92"
+    // console.log(data)
+
+    if (data.length==0) {
+        let error = document.createElement("img");
+        error.src="https://cdn.dribbble.com/users/1676373/screenshots/4177728/media/c03e140cbc9e5959946bb95600772ab3.gif"
+        main.append(error)
+   }
+
+    data.map(({brand_name,filter_name,hotel_address,hotel_name,main_image,place_name,price,room,contact})=>{
 
            
 
@@ -35,7 +54,7 @@ price1.textContent=`₹ ${price} /INR`
 main_image1.src=main_image
 reiviws.textContent=` o o o o o`
 hotel_detail.textContent=`View hotel details`
-hotele_address1.textContent=hotele_address
+hotele_address1.textContent=hotel_address
 category1.textContent="Category 4"
 rate.textContent="VIEW RATES"
 text_rev.textContent="Reviews"
@@ -64,7 +83,7 @@ rate.addEventListener("click",function(){
         filter_name,
         contact,
         hotel_name,
-        hotele_address,
+        hotel_address,
         main_image,
         place_name,
         price,
@@ -84,7 +103,7 @@ top_div.addEventListener("click",function(){
         filter_name,
         contact,
         hotel_name,
-        hotele_address,
+        hotel_address,
         main_image,
         place_name,
         price,

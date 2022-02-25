@@ -8,7 +8,7 @@ let data=JSON.parse(localStorage.getItem("full_page"))
 
 
 
-let {brand_name,filter_name,contact,hotel_name,hotele_address,main_image,place_name,price,room}=data
+let {brand_name,filter_name,contact,hotel_name,hotel_address,main_image,place_name,price,room}=data
     let main_div=document.createElement("div")
     // _____________________________________________________
     let top_div=document.createElement("div")
@@ -38,11 +38,11 @@ let {brand_name,filter_name,contact,hotel_name,hotele_address,main_image,place_n
     hotel_name1.textContent=`${hotel_name}`
     price1.textContent=`₹ ${price} /INR` 
     main_image1.src=main_image
-    contact1.textContent=contact
+    contact1.textContent=7518034435
     
     reiviws.textContent=` o o o o o`
     hotel_detail.textContent=`View hotel detail`
-    hotele_address1.textContent=hotele_address
+    hotele_address1.textContent=hotel_address
     category1.textContent="Category 4"
     rate.textContent="VIEW RATES"
     text_rev.textContent="Reviews"

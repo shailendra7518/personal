@@ -897,17 +897,17 @@ function otp(){
 }
 }
 
-let {hotel_name,hotele_address,contact}=JSON.parse(localStorage.getItem("full_page"))
+let {hotel_name,hotel_address,contact}=JSON.parse(localStorage.getItem("full_page"))
 
 let {total_guest,room_name,price,no_of_room,no_of_day,no_of_chaild,no_of_adult,Destination,checkin_date,checkout_date,image_url}=JSON.parse(localStorage.getItem("master_checkout"))
 
 
 let hoteladdress=document.getElementById("address2")
-address2.textContent=`Address :${hotele_address}`;
+address2.textContent=`Address :${hotel_address}`;
 let hotelname=document.getElementById("hotelname");
 hotelname.textContent=`Hotel name : ${hotel_name}`
 let phone1=document.getElementById("phone1");
-phone1.textContent=`Contact :${contact}`;
+phone1.textContent=`Contact :${7518034435}`;
 let roomimg=document.getElementById("roomimg");
 roomimg.src=image_url;
 let aboutroom=document.getElementById("aboutroom");

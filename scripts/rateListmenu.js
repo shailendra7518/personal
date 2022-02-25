@@ -167,17 +167,17 @@ window.location.href="/nikhilproject/payment.html"
 
 
 
-let {hotel_name,hotele_address,contact}=JSON.parse(localStorage.getItem("full_page"))
+let {hotel_name,hotel_address,contact}=JSON.parse(localStorage.getItem("full_page"))
 
 
 
 let hoteladdress=document.getElementById("address2")
-address2.textContent=`Address :${hotele_address}`;
+address2.textContent=`Address :${hotel_address}`;
 
 let hotelname=document.getElementById("hotelname");
 hotelname.textContent=`Hotel name : ${hotel_name}`
 let phone1=document.getElementById("phone1");
-phone1.textContent=`Contact :${contact}`;
+phone1.textContent=`Contact :${7518034435}`;
 
 
 

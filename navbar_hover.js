@@ -587,3 +587,23 @@ function footer_pop3(){
     }
  
 }
+
+
+// let [dest,checkin,checkout]=JSON.parse(localStorage.getItem("checkIN_out"))
+
+
+
+// async function exe() {
+//     try {
+//       let response=await fetch(`https://blooming-brook-61650.herokuapp.com/findhotels/${dest}`)
+//      let result = await response.json(); // Now this will wait till it finished
+//       console.log(result);
+//        localStorage.setItem("product",JSON.stringify(result))
+     
+      
+//     } catch(e) {
+//      console.log(e);
+//     }
+//   }
+   
+//   exe()
