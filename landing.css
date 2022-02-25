@@ -9,7 +9,7 @@ body{
 }
 
 #waiting{
-    border: 2px solid gold;
+    border: 2px solid transparent;
     width: 80%;
     height: 1000px;
     top: 0%;
@@ -1607,5 +1607,9 @@ height: 9vw;
     background-color: white;
     width: 110vw;
 }
+
+
+
+
 }
 

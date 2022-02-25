@@ -334,7 +334,8 @@ async function exe() {
     
 
     
-let product = JSON.parse(localStorage.getItem("product"))
+    let product = result
+    // JSON.parse(localStorage.getItem("product"))
     console.log(product)
     document.querySelector("#waiting").style.display="none";
 
