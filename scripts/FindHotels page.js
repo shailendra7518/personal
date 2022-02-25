@@ -320,8 +320,6 @@ import appendata from '/scripts/appendfunction.js'
 
 
 
-<uses-Permissions android:name="android.permission.INTERNET" />
-
 
 async function exe() {
   document.querySelector("#waiting").style.display="block";
