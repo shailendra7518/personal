@@ -9,7 +9,7 @@ body{
 }
 
 #waiting{
-    border: 2px solid transparent;
+    /* border: 2px solid gold; */
     width: 80%;
     height: 1000px;
     top: 0%;
@@ -562,18 +562,17 @@ left: 11.4%;
  }
  
  .fourthPosterbtu{
-     background-color: transparent;
-     padding:1% 1% ; 
-     margin-left:28.5%;
-     margin-top: 40px;
-     height:1.8vw;
-      width: 16%;
+    background-color: transparent;
+    padding:10px 25px; 
+    margin-left:29%;
+    margin-top: 40px;
+    height:20px;
+   width: 9%;
+   border: 1px solid black;
+   font-weight: bolder;
+   font-size: .9vw;
      border: 1px solid white;
      color: white;
-     font-weight: bolder;
-     font-size: 1.1vw;
-     display: flex;
-     justify-content: center;
  }
  
  .fourthPosterbtu:hover{
@@ -1078,7 +1077,7 @@ select {
     margin-top: 50px;
     display: flex;
     margin-bottom: 80px;
-
+   
 }
 
 .footer_cat>div{
@@ -1607,9 +1606,5 @@ height: 9vw;
     background-color: white;
     width: 110vw;
 }
-
-
-
-
 }
 

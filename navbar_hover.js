@@ -1,4 +1,5 @@
 let flage=true;
+
 let box=document.querySelector(".hoverOuter")
 function clickOn(){
     if(flage){
@@ -162,7 +163,7 @@ function clickOn3(){
     if(flage){
         box.innerHTML=`<div class="hover">
         <div id="ourbrands">
-            <img src="/index_image/Ourbrand.png" width="100%" height="100%" alt="">
+            <img src="./index_image/Ourbrand.png" width="100%" height="100%" alt="">
         </div>
     </div>`
         flage=false;
@@ -258,8 +259,8 @@ function siginOn(){
                     <p class="welcome">Welcome to Marriott Bonvoy</p>
                     <p class="sign-letter">Sign In To Your Account</p>
     
-                    <p>Username</p>
-                    <input type="text" id="username-login" placeholder="username">
+                    <p>Email</p>
+                    <input type="text" id="username-login" placeholder="email id">
     
                     <p>Password</p>
                     <input type="password" id="password-login" placeholder="password">
@@ -271,7 +272,8 @@ function siginOn(){
     
                     <p class="last-p">Forgot password</p>
                     <p class="last-p" id="create_account" onclick="createOn()">Activate online account</p>
-                    <img id="fb-logo" src="https://i.stack.imgur.com/LKMP7.png" alt="">
+                  
+                    
                 </form>
             </div>
             <div class="aditiya_right_box">
@@ -301,6 +303,7 @@ function siginOn(){
     }
 
 
+
     function removeOn(){
         siginbox.innerHTML=null;
     }
@@ -314,7 +317,7 @@ function siginOn(){
             <div class="cross" onclick="removeOn()">x</div>
             <p class ="welcome">Join Marriott Bonvoy</p>
             <p class="sign-letter">Free Wi-Fi, Mobile check-in</p>
-            <img id="sign-logo" src="https://i.stack.imgur.com/oL5c2.png" alt="logo">
+           
             <form onsubmit="Register(event)">
                 <!-- <h1>Register</h1>
                 <br> -->
@@ -344,7 +347,7 @@ function siginOn(){
 
                 <label class="labelcr">Mobile Number</label>
 
-                <input type="number" id="num" class="inputcr" placeholder="username" required>
+                <input type="number" id="num" class="inputcr" placeholder="mobile number" required>
                 <br>
 
                 <label class="labelcr">Username</label>
@@ -386,10 +389,10 @@ async function Register(event){
         description:document.querySelector("#name2").value,
     }
     regiobj=JSON.stringify(regiobj);
-
+    document.querySelector("#waiting").style.display="block";
 
     try{
-          let url='https://masai-api-mocker.herokuapp.com/auth/register'
+          let url='https://marriott-bonvoy.herokuapp.com/Register'
           
         let response = await fetch(url,{
             method:"POST",
@@ -406,11 +409,15 @@ async function Register(event){
         document.querySelector("#pass").value=null
         document.querySelector("#num").value=null
         document.querySelector("#name2").value=null
+        document.querySelector("#waiting").style.display="none";
         alert("Registration Successful");
-        console.log(data);
+
+        siginOn()
+       
     }
     catch(er){
-        console.log("Register side",er)
+        console.log("Register side",er.message)
+        document.querySelector("#waiting").style.display="none";
         alert("Registration failed,user already exists");
         document.querySelector("#name1").value=null
         document.querySelector("#email").value=null
@@ -420,18 +427,19 @@ async function Register(event){
         document.querySelector("#name2").value=null
     }
 }
-
+let userarr=[]
+let signingStatus=false;
 async function Onscreenlogin(){
     let loginData={
         password:document.querySelector("#passwordinput").value,
-        username:document.querySelector("#Emailinput").value,
+        email:document.querySelector("#Emailinput").value,
     }
     loginData=JSON.stringify(loginData);
     
     document.querySelector("#waiting").style.display="block";
 
     try{
-        let url='https://masai-api-mocker.herokuapp.com/auth/login'
+        let url='https://marriott-bonvoy.herokuapp.com/login'
         let response=await fetch(url,{
             method:"POST",
             body:loginData,
@@ -440,10 +448,22 @@ async function Onscreenlogin(){
             }
         });
         let data = await response.json();
-        console.log(data);
-        let username=document.querySelector("#Emailinput").value
-        document.querySelector("#waiting").style.display="none";
-        getUser(username,data.token)
+          
+        if(data.message!==undefined){
+            alert(data.message)
+            document.querySelector("#passwordinput").value=null
+            document.querySelector("#Emailinput").value=null
+            document.querySelector("#waiting").style.display="none";
+        }
+        else{
+            signingStatus=true
+            localStorage.setItem("Status",JSON.stringify(signingStatus));
+            userarr.push(data.user.name)
+            localStorage.setItem("UserData",JSON.stringify(userarr));
+            call(data.user.name);
+            removeOn();
+            document.querySelector("#waiting").style.display="none";
+        }
     }
 
     catch(er){
@@ -456,17 +476,19 @@ async function Onscreenlogin(){
     
 }
 
+
+localStorage.setItem("Status",JSON.stringify(signingStatus));
 async function Login(event){
     event.preventDefault();
     let loginData={
         password:document.querySelector("#password-login").value,
-        username:document.querySelector("#username-login").value,
+        email:document.querySelector("#username-login").value,
     }
     loginData=JSON.stringify(loginData);
     document.querySelector("#waiting").style.display="block";
 
     try{
-        let url='https://masai-api-mocker.herokuapp.com/auth/login'
+        let url='https://marriott-bonvoy.herokuapp.com/login'
         let response=await fetch(url,{
             method:"POST",
             body:loginData,
@@ -475,10 +497,24 @@ async function Login(event){
             }
         });
         let data = await response.json();
-        console.log(data);
+        
+        if(data.message!==undefined){
+            alert(data.message)
+            document.querySelector("#password-login").value=null;
+            document.querySelector("#waiting").style.display="none";
+            document.querySelector("#username-login").value=null;
+        }
+       else{
+        signingStatus=true
+        localStorage.setItem("Status",JSON.stringify(signingStatus));
+        userarr.push(data.user.name)
+       localStorage.setItem("UserData",JSON.stringify(userarr));
+        call(data.user.name);
+        removeOn();
         document.querySelector("#waiting").style.display="none";
-        let username=document.querySelector("#username-login").value
-        getUser(username,data.token)
+       }
+      
+       
     }
 
     catch(er){
@@ -490,32 +526,7 @@ async function Login(event){
     }
 }
 
-let userarr=[]
-async function getUser(username,token){
-    try{
 
-        let api=`https://masai-api-mocker.herokuapp.com/user/${username}`;
-        let response1=await fetch(api,{
-            headers:{
-                "Content-Type":"application/json",
-                Authorization:`Bearer ${token}`,
-            }
-        });
-
-        let data1=await response1.json();
-        console.log(data1.name);
-        userarr.push(data1.name)
-        localStorage.setItem("UserData",JSON.stringify(userarr));
-        call(data1.name);
-        removeOn();
-    
-
-    }
-    catch(e){
-        console.log("getUser side",e);
-        alert("Please fill right details ")
-    }
-}
 
 let a= document.querySelector("#siginName")
 let b=document.querySelector("#logOut")
@@ -524,7 +535,8 @@ let c=document.querySelector("#dhruv")
 function call(userName){
 
    b.textContent="Logout"
-   a.textContent=userName.charAt(0).toUpperCase()+userName.slice(1);
+//    .charAt(0).toUpperCase()+userName.slice(1);
+   a.textContent=userName
    c.innerHTML=` <div class="dhruv-msg">
 
    Hello,${userName.charAt(0).toUpperCase()+userName.slice(1)} Welcome MARRIOTT BONVOY Club
@@ -587,23 +599,3 @@ function footer_pop3(){
     }
  
 }
-
-
-// let [dest,checkin,checkout]=JSON.parse(localStorage.getItem("checkIN_out"))
-
-
-
-// async function exe() {
-//     try {
-//       let response=await fetch(`https://blooming-brook-61650.herokuapp.com/findhotels/${dest}`)
-//      let result = await response.json(); // Now this will wait till it finished
-//       console.log(result);
-//        localStorage.setItem("product",JSON.stringify(result))
-     
-      
-//     } catch(e) {
-//      console.log(e);
-//     }
-//   }
-   
-//   exe()
