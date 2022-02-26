@@ -17,13 +17,13 @@ dest=dest.toLowerCase()
 // fetchMoviesJSON()
 
 
-let [userName1] = JSON.parse(localStorage.getItem("UserData"))
+// let userName1 = JSON.parse(localStorage.getItem("UserData"))
 
-if(userName1 !=null){
-    document.getElementById("user").textContent=(userName1.charAt(0).toUpperCase() + userName1.slice(1))
-}else{
-  document.getElementById("user").textContent="Signup"
-}
+// if(userName1 !=null){
+//     document.getElementById("user").textContent=(userName1.charAt(0).toUpperCase() + userName1.slice(1))
+// }else{
+//   document.getElementById("user").textContent="Signup"
+// }
 
 
 import appendata from '/scripts/appendfunction.js'
