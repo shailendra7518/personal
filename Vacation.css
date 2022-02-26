@@ -84,7 +84,7 @@ a:hover {
 
 }
 
-.item>img {
+.item>a>img {
 
     transition: transform .9s;
     width: 150px;

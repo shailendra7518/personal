@@ -12,6 +12,7 @@
         rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="https://cache.marriott.com/Images/Mobile/MC_Logos/MarriottApple57x57.png
         " hreflang="en-in" />
+        <!-- <link rel="stylesheet" href="../Vacation.css"> -->
     <style>
         /* cardcsss */*{
     font-family: 'Poppins', sans-serif;
@@ -366,6 +367,198 @@ color: blueviolet;
 }
 
 
+.sign-letter {
+    font-size: 25px;
+}
+
+.sign-letter1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.welcome {
+    /* border: 1px solid blue; */
+    width: 500px;
+    font-size: 34px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+
+.bg-modal2 {
+    width: 70%;
+    height: 650px;
+    background-color: white;
+    display: flex;
+    
+    justify-content: center;
+    
+    margin-left: 180px;
+    margin-top: 10px;
+    gap: 30px;
+    position: absolute;
+    margin-top: 20%;
+    
+}
+
+.modal-content2 {
+    margin-left: 20px;
+    width: 80%;
+    height: 650px;
+    border-right: 2px solid black;
+    padding-right: 25px;
+    /* text-align: center; */
+
+
+}
+
+
+.modal-content2 input{
+    
+        padding: 10px 180px;
+        text-align: left;
+    
+}
+
+.login-submit {
+    margin-top: 10px;
+    padding: 13px 230px;
+    background-color: #444054;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+}
+
+.aditiyabtu{
+     width: 100%;
+     font-size: 20px;
+     font-weight:bold;
+     padding:10px 0px ;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.aditiyabtu:hover{
+    background-color:black;
+    color: white;
+    cursor: pointer;
+  }
+
+  .login-submit:hover{
+    background-color: #53505f;
+    cursor: pointer;
+  }
+
+.last-p {
+    color: tomato;
+}
+
+.aditiya_right_box{
+    /* border: 2px solid black; */
+    height: 520px ;
+
+    position: relative;
+    top: 140px;
+}
+
+.cross{
+    position: absolute;
+    font-size: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+
+
+#create_account{
+    cursor: pointer;
+}
+
+#create_account:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+#siginBox1{
+
+    
+    /* width: 30%; */
+    z-index: 3;
+    position:absolute;
+    top:40px;
+    left:27%;
+    background-color:white;
+   
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+    
+   }
+.modal-content {
+    padding: 40px;
+    background-color: white;
+    width: 600px;
+    /* height: 900px; */
+    /* text-align: center; */
+   
+    
+  
+}
+
+
+
+#sign-logo{
+    height: 40px;
+    width: 250px;
+}
+
+.labelcr {
+    margin-left: 5px;
+    float: left;
+    width: 150px;
+    margin-bottom: 10px;
+    /*or whatever you want the spacing to be*/
+}
+
+#cond {
+    width: 530px;
+    display: inline-block;
+    text-align: justify;
+    /* border: 1px solid red; */
+}
+
+.signup-submit {
+    background-color: #444054;
+    color: white;
+    padding: 10px 234px;
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.inputcr {
+    padding: 10px 180px;
+    text-align: left;
+    margin-left: 5px;
+    float: left;
+    /* width: 150px; */
+    margin-bottom: 10px;
+    /*or whatever you want the spacing to be*/
+}
+
+
+select {
+    margin-left: 5px;
+    padding: 10px 226px;
+}
+
+
+#logOut{
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+
 @media only screen and (max-width: 480px) and (min-width: 0px){
 
     #roomheld>#flex{
@@ -558,6 +751,9 @@ color: blueviolet;
 </head>
 <body>
 <!-- ---------------------movendhan------------------------ -->
+<div id="pop">
+
+</div>
 
 <div id="navbar">
     <a id="menu" href="/index.html">Home</a>
@@ -881,23 +1077,28 @@ color: blueviolet;
 </html>
 <script>
   let status= JSON.parse(localStorage.getItem("Status"))
-
-     console.log(status)
+  let siginbox=document.querySelector("#pop");
 loggedIn=()=>{
+    console.log(status)
 if(status==true){
+  
     otp();
 }
 else{
     alert("Please login to continue");
+
+   
+
 }
 } 
+   
 
 function otp(){
+  
     var card_number=document.getElementById("card_number").value;
     var expiry_month=document.getElementById("expiry_month").value;
     var expiry_year=document.getElementById("expiry_year").value;
     
-
    if(card_number.length==12&&expiry_month.length!=0&&expiry_year.length!=0&&expiry_month>0&&expiry_month<=12){
   setTimeout(()=>{
       window.location.href="otp.html";
@@ -957,5 +1158,9 @@ if(userName1 !=null){
 }else{
   document.getElementById("user").textContent="Signup"
 }
+
+
+
+
 
 </script>
