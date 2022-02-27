@@ -68,9 +68,11 @@ flex-flow: column;
     border: 8px solid rgb(167, 157, 157);
     padding: 3px;
     background-color: cadetblue;
-    animation: 2s work ease infinite;
+    /* animation: 2s work ease ; */
+    /* right: 20px;
+    transition: 10ms ease-in; */
     
-    right: 0%;
+    
     /* position: relative; */
     
    
@@ -306,10 +308,12 @@ text-decoration: underline;
         border: 0px;
         padding: 0px;
         background-color: transparent;
-        animation: 2s work ease infinite;
+        /* animation: 2s work ease infinite; */
         
-       
-        /* position: relative;  */
+       /* border: 9px solid red; */
+       /* right: 0%;
+        position: relative; 
+       transition: 2s ease-in ; */
         
        
     }
