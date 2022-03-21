@@ -1,6 +1,6 @@
 # Marriott_Bonvoy_clone.github.io
-Only frontend stuff 
-# deployed link 🔗https://masai-marriott-com.vercel.app/
+frontend and backend stuff
+# deployed link 🔗https://personal-iota-flame.vercel.app/
 ## About
 Marriott Bonvoy is a hotel, resort, and accommodation booking website. This was a collaborative project built by 5 members of the team and executed in 5 days.
 
@@ -8,15 +8,15 @@ Marriott Bonvoy is a hotel, resort, and accommodation booking website. This was 
 1. Sai Nikhil
 2. Ambaliya Dhruv
 3. Shailendra Kumar
-4. Moovendhan
+4. shiva kashyap
 5. Aditya Raj
 6. Devesh Verma
 ## Introduction
-Our task was to implement our HTML, CSS, and Advanced JavaScript knowledge which we had learned at Masai. We used this skillset to build a static copy of Marriott Bonvoy along with the responsiveness of the page for different screen sizes and some user interactivity with Advanced JS.
+Our task was to implement our backend which we learned in unit 4 knowledge and for backend mongoDb and express node.js which we had learned at Masai. We used this skillset to build a static copy of Marriott Bonvoy along with the responsiveness of the page for different screen sizes and some user interactivity with Advanced JS.
 ## How we started the project
 Firstly we noted all the difficulties we might face in the project and worked on it initially like fetching data from database . Then we divided the work equally and constantly discussed the progress and complimented each others work and kept moving forward until we reached the goal. We helped each other with the solutions for the difficulties we were facing while doing the project. We enjoyed each others company along with project progress .
 ## Roles and responsibilities of team members
-Aditya Raj worked on sign up and sign in pages, Dhruv worked on homepage and header of homepage,Moovendhan worked on header and footer of all pages,I worked on payment page and database, Shailendra worked on find hotel page,hotel description and database,Devesh worked on vacation page.
+ Nikhil worked on creating database and adding hotel data and deployed  on herokuAditya Raj worked on sign up and sign in pages, Dhruv worked on homepage and header of homepage, worked on header and footer of all pages,I worked on payment page and database, Shailendra worked on find hotel page,hotel description and work on making mobile responsive,Devesh worked on vacation page.
 ## Some snapshots of our cloned website…
 ### Landing Page 
 ![Screenshot 2022-01-22 102413](https://user-images.githubusercontent.com/96105500/158127155-6f7bbed7-7bc6-4685-8208-b0768447016f.png)
